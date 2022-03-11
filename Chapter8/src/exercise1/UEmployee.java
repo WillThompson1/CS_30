@@ -6,10 +6,10 @@ package exercise1;
 public class UEmployee {
 
 	private String firstName, lastName;
-	private int Salary; 
+	private Integer Salary; 
 	
 	
-	public UEmployee(String Fn, String Ln, int Sal) {
+	public UEmployee(String Fn, String Ln, Integer Sal) {
 		
 		firstName = Fn;
 		lastName = Ln; 

@@ -30,9 +30,10 @@ public class Unitester {
 		if(EmpType.equalsIgnoreCase("Faculty")) {
 			
 			System.out.println("Enter Department name:");
-			String D = input.next();
-			
+			String D = input.next(); 
+			       D+= input.nextLine();
 			return new Faculty(Fn, Ln, Sal, D);
+			
 		}
 		else
 		{
@@ -57,6 +58,6 @@ public class Unitester {
 			System.out.println(emp1);
 			System.out.println(emp2);
 			System.out.println(emp3);
-			
+		
   }	
 }

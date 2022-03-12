@@ -1,3 +1,9 @@
+
+//Faculty Class for Exercise 1
+//Will Thompson
+
+
+
 package exercise1;
 
 
@@ -8,7 +14,7 @@ package exercise1;
  */
 public class Faculty extends UEmployee {
 	
-	//initializing string used to store department
+	//initializing string used to store department, which is faculty specific 
 	private String Deptname;
 	
 	
@@ -18,7 +24,7 @@ public class Faculty extends UEmployee {
 		Deptname = D;
 	}
 	
-	
+	//when the faculty class is called it will return the department name 
 	public String toString() {
 		return(super.toString() + " " + Deptname);
 		

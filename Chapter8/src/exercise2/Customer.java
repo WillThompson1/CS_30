@@ -33,9 +33,9 @@ public class Customer {
 	 public String toString() {
 		String custString;
 	
-		custString = firstName + " " + lastName + "\n";
-		custString += street + "\n";
-		custString += city + ", " + state + "  " + zip + "\n";
+		custString = "\n" + firstName + " " + lastName + "'s" + " Account" + "\n";
+		custString += "Located in " + street + "\n";
+		custString += city + ", " + state + " " + zip + "\n";
 	 	return(custString);
 	}
 }

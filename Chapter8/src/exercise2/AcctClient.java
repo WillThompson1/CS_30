@@ -22,16 +22,19 @@ public class AcctClient {
 		System.out.println("Enter your last name: ");
 		String Ln = input.next();
 		
-		System.out.println("\n Now enter some location details");
+		
+		System.out.println("\nNow enter some location details");
 		System.out.println("Enter State: ");
 		String s = input.next();
 		System.out.println("Enter city: ");
 		String c = input.next();
 		System.out.println("Enter street: ");
 		String str = input.next();
+		       str+= input.nextLine();
 		System.out.println("Enter zip code");
 		String z = input.next();
 		
+		System.out.print("\nYour account:");
 		return new Customer(Fn, Ln, s, c, str, z);
 		
 		

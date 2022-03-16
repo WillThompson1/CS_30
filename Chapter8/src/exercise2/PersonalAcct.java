@@ -7,14 +7,14 @@ package exercise2;
 
 public class PersonalAcct extends Account {
 	
-	public PersonalAcct(double bal, String fName, String lName, String str, String city, String st, String zip) {		
-	      super(bal, fName, lName, str, city, st, zip);
+	public PersonalAcct(double bal, String Fn, String Ln, String str, String city, String st, String zip) {		
+	      super(bal, Fn, Ln, str, city, st, zip);
 		
 	if (bal < 100) {
 		bal = bal - 2;
 		
 		System.out.println("A personal account requires a minimum balance of $100, a $2 fee has been charged for not meeting the requirements");
-		toString();
+		
 		
 		
 	

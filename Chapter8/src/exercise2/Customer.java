@@ -14,9 +14,9 @@ public class Customer {
 	 * post: A Customer object has been created. 
 	 * Customer data has been initialized with parameters.
 	 */
-	public Customer(String fName, String lName, String str, String c, String s, String z) {
-		firstName = fName;
-		lastName = lName;
+	public Customer(String Fn, String Ln, String str, String c, String s, String z) {
+		firstName = Fn;
+		lastName = Ln;
 		street = str;
 		city = c;
 		state = s;

@@ -7,8 +7,8 @@ package exercise2;
 
 public class BusinessAcct extends Account{
 
-	public BusinessAcct(double bal, String fName, String lName, String str, String city, String st, String zip) {
-	      super(bal, fName, lName, str, city, st, zip);
+	public BusinessAcct(double bal, String fName, String lName, String str, String c, String s, String z) {
+	      super(bal, fName, lName, str, c, s, z);
 	
 	if (bal < 500) {
 		bal = bal - 10;

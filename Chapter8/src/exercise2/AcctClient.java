@@ -11,7 +11,8 @@ import java.util.Scanner;
 
 public class AcctClient {
 
-	public static Customer assign() {
+	
+	public static void userinfo() {
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -24,7 +25,7 @@ public class AcctClient {
 		
 		
 		System.out.println("\nNow enter some location details");
-		System.out.println("Enter State: ");
+		System.out.println("Enter Province/State: ");
 		String s = input.next();
 		System.out.println("Enter city: ");
 		String c = input.next();
@@ -34,10 +35,29 @@ public class AcctClient {
 		System.out.println("Enter zip code");
 		String z = input.next();
 		
-		System.out.print("\nYour account:");
-		return new Customer(Fn, Ln, s, c, str, z);
+        System.out.print("\nYour account:");
+		
+		Customer user = new Customer(Fn, Ln, str, c, s, z);
+		System.out.print(user);
+		
+	}
+	
+	
+	
+	public static Customer assign() {
 		
 		
+		userinfo();
+		
+		
+		System.out.println("\nWhat action would you like to perform?");
+		System.out.println("Check Balance, Deposit, Withdraw");
+		
+		
+		
+		
+		
+		return null;
 		
 		
 		
@@ -62,7 +82,7 @@ public class AcctClient {
 		
 		cust = assign();
 			
-		System.out.println(cust);	
+			
 		
 			
 			

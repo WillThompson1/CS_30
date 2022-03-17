@@ -18,9 +18,9 @@ public class Account {
 	 * post: An account has been created. Balance and 
 	 * customer data has been initialized with parameters.
 	 */
-	public Account(double bal, String Fn, String Ln, String str, String city, String st, String zip) {
+	public Account(double bal, String Fn, String Ln, String str, String c, String s, String z) {
 		balance = bal;
-		cust = new Customer(Fn, Ln, str, city, st, zip);
+		cust = new Customer(Fn, Ln, str, c, s, z);
 	}
 	
 

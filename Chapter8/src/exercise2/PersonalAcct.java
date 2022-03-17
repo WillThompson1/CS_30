@@ -7,8 +7,8 @@ package exercise2;
 
 public class PersonalAcct extends Account {
 	
-	public PersonalAcct(double bal, String Fn, String Ln, String str, String city, String st, String zip) {		
-	      super(bal, Fn, Ln, str, city, st, zip);
+	public PersonalAcct(double bal, String Fn, String Ln, String str, String c, String s, String z) {		
+	      super(bal, Fn, Ln, str, c, s, z);
 		
 	if (bal < 100) {
 		bal = bal - 2;

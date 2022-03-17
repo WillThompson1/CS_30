@@ -30,11 +30,13 @@ public class Customer {
 	 * post: A string representing the Account object has 
 	 * been returned.
 	 */
+	
+	 @Override
 	 public String toString() {
 		String custString;
 	
 		custString = "\n" + firstName + " " + lastName + "'s" + " Account" + "\n";
-		custString += "Located in " + street + "\n";
+		custString += "Located on " + street + "\n";
 		custString += city + ", " + state + " " + zip + "\n";
 	 	return(custString);
 	}

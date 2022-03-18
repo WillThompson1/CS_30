@@ -36,6 +36,10 @@ public class Account {
 	}
 
 
+	
+	
+	
+	
 	/** 
 	 * A deposit is made to the account.
 	 * pre: none
@@ -58,6 +62,17 @@ public class Account {
 	 		System.out.println("Not enough money in account.");
 	 	}
 	}
+	
+	
+	
+	
+	
+	public void fee(double amt) {
+		balance = balance - amt;
+	}
+	
+	
+	
 	
 	
 	/** 

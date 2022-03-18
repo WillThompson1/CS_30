@@ -22,13 +22,3 @@ public class PersonalAcct extends Account {
 	}
 }}
 
-/*
- *
- * Make sure all of the functions will work 
- * 
- * Create a new class for the front end
- * working on asking questions and inputting the answers
- * the answers will decide which classes are run 
- *
- *
-*/

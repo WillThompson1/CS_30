@@ -18,7 +18,7 @@ public class PersonalAcct extends Account {
 		if (super.getBalance() < 100) {
 			super.fee(2);
 
-			System.out.println("/nA personal account requires a minimum balance of $100, a $2 fee has been charged for not meeting the requirements");
+			System.out.println("\nA personal account requires a minimum balance of $100, a $2 fee has been charged for not meeting the requirements,");
 				}
 	}
 

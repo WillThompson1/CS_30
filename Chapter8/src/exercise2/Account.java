@@ -32,7 +32,7 @@ public class Account {
 	 * post: The account balance has been returned.
 	 */
 	public double getBalance() {
-	 	return(balance);
+		return balance;
 	}
 
 

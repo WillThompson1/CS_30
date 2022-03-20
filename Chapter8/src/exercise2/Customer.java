@@ -35,7 +35,7 @@ public class Customer {
 	 public String toString() {
 		String custString;
 	
-		custString = "\n" + firstName + " " + lastName + "'s" + " Account" + "\n";
+		custString = "\n" + firstName + " " + lastName + "'s" + " Profile" + "\n";
 		custString += "Located on " + street + "\n";
 		custString += city + ", " + state + " " + zip + "\n";
 	 	return(custString);

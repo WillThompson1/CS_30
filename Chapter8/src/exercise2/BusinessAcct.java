@@ -19,7 +19,7 @@ public class BusinessAcct extends Account{
 		if (super.getBalance() < 500) {
 			super.fee(10);
 
-			System.out.println("/nA business account requires a minimum balance of $500, a $10 fee has been charged for not meeting the requirements");
+			System.out.println("\nA business account requires a minimum balance of $500, a $10 fee has been charged for not meeting the requirements,");
 				}
 	}
 		

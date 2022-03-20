@@ -4,15 +4,20 @@
 
 package exercise2;
 
+import java.text.NumberFormat;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class AcctClient {
 
+	
+	
 	public static Customer assign() {
 
+		
 		Scanner input = new Scanner(System.in);
 
+		
 		System.out.println("Welcome to Will's Account Manager");
 
 		System.out.println("Enter your first name: ");
@@ -33,14 +38,17 @@ public class AcctClient {
 		String z = input.next();
 		z += input.nextLine();
 
-		System.out.print("\nYour account:");
+		
+		
+		System.out.print("\nYour Information:");
 
 		Customer user = new Customer(Fn, Ln, str, c, s, z);
 		System.out.print(user);
 
 		double bal = ThreadLocalRandom.current().nextDouble(700, 2700);
-
-		System.out.println("\nIs this a personal account or a business account?");
+				
+		
+		System.out.println("\nIs this a personal or a business account?");
 		String accType = input.next();
 
 		
@@ -55,7 +63,7 @@ public class AcctClient {
 			do {
 
 				System.out.println("\nWhat action would you like to perform:");
-				System.out.println("Deposit, Withdraw, View Balance or Exit");
+				System.out.println("Deposit, Withdraw, View Balance, View Account or Exit");
 				String action = input.next();
 				action += input.nextLine();
 
@@ -63,21 +71,32 @@ public class AcctClient {
 						System.out.println("How much would you like to deposit?");
 						double amt = input.nextDouble();
 						acct.deposit(amt);
-						System.out.println("\nNew balance is: " + acct.getBalance());
+						
+						NumberFormat money = NumberFormat.getCurrencyInstance();
+						System.out.println("\nNew balance is: " + money.format(acct.getBalance()));
 					}
 
 					if (action.equalsIgnoreCase("Withdraw")) {
 						System.out.println("How much would you like to withdraw?");
 						double amt = input.nextDouble();
 						acct.withdrawal(amt);
-						System.out.println("\nNew balance is: " + acct.getBalance());
+						
+						NumberFormat money = NumberFormat.getCurrencyInstance();
+						System.out.println("\nNew balance is: " + money.format(acct.getBalance()));
 					}
 
 					if (action.equalsIgnoreCase("View Balance")) {
-						System.out.println("Your current balance is:");
-						System.out.println(acct.getBalance());
+						System.out.println("Here is your current balance:");
+						
+						NumberFormat money = NumberFormat.getCurrencyInstance();
+						System.out.println(money.format(acct.getBalance()));
 					}
 
+					if (action.equalsIgnoreCase("View Account")) {
+						System.out.println("Here is your account:");
+						System.out.println(acct);
+					}
+					
 					if (action.equalsIgnoreCase("Exit")) {
 						System.out.println("Have a great day!");
 						repeat = 0;
@@ -88,8 +107,7 @@ public class AcctClient {
 
 			
 			
-			
-		} else if (accType.equalsIgnoreCase("Business")) {
+		} if (accType.equalsIgnoreCase("Business")) {
 
 			int repeat = 1;
 
@@ -98,47 +116,63 @@ public class AcctClient {
 			do {
 
 				System.out.println("\nWhat action would you like to perform:");
-				System.out.println("Deposit, Withdraw, View Balance or Exit");
+				System.out.println("Deposit, Withdraw, View Balance, View Account or Exit");
 				String action = input.next();
 				action += input.nextLine();
 
-				if (action.equalsIgnoreCase("Deposit")) {
-					System.out.println("How much would you like to deposit?");
-					double amt = input.nextDouble();
-					acct.deposit(amt);
-					System.out.println("\nNew balance is: " + acct.getBalance());
-				}
+					if (action.equalsIgnoreCase("Deposit")) {
+						System.out.println("How much would you like to deposit?");
+						double amt = input.nextDouble();
+						acct.deposit(amt);
+						
+						NumberFormat money = NumberFormat.getCurrencyInstance();
+						System.out.println("\nNew balance is: " + money.format(acct.getBalance()));
+					}
 
-				if (action.equalsIgnoreCase("Withdraw")) {
-					System.out.println("How much would you like to withdraw?");
-					double amt = input.nextDouble();
-					acct.withdrawal(amt);
-					System.out.println("\nNew balance is: " + acct.getBalance());
-				}
+					if (action.equalsIgnoreCase("Withdraw")) {
+						System.out.println("How much would you like to withdraw?");
+						double amt = input.nextDouble();
+						acct.withdrawal(amt);
+						
+						NumberFormat money = NumberFormat.getCurrencyInstance();
+						System.out.println("\nNew balance is: " + money.format(acct.getBalance()));
+					}
 
-				if (action.equalsIgnoreCase("View Balance")) {
-					System.out.println("Your current balance is:");
-					System.out.println(acct.getBalance());
-				}
+					if (action.equalsIgnoreCase("View Balance")) {
+						System.out.println("Here is your current balance:");
+						
+						NumberFormat money = NumberFormat.getCurrencyInstance();
+						System.out.println(money.format(acct.getBalance()));
+					}
 
-				if (action.equalsIgnoreCase("Exit")) {
-					System.out.println("Have a great day!");
-					repeat = 0;
-				}
+					if (action.equalsIgnoreCase("View Account")) {
+						System.out.println("Here is your account:");
+						System.out.println(acct);
+					}
+					
+					if (action.equalsIgnoreCase("Exit")) {
+						System.out.println("Have a great day!");
+						repeat = 0;
+						}
+
 
 			} while (repeat == 1);
 
 		}
-
+		
+		input.close();
 		return null;
 
 	}
 
 	public static void main(String[] args) {
 
+		
+		@SuppressWarnings("unused")
 		Customer cust;
-
 		cust = assign();
+	
+
 
 	}
 

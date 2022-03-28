@@ -1,9 +1,6 @@
 package exercise3;
 
 
-
-
-
 public class Car extends Vehicle {
 
 	private String bodyType;
@@ -22,7 +19,17 @@ public class Car extends Vehicle {
 	}
 
 
-	
-
+	public String getBodyTypeString() {
+		
+		if (bodyType.equalsIgnoreCase("coupe")) {
+			return("is a coupe");
+		}
+		if (bodyType.equalsIgnoreCase("sedan")) {
+			return("is a sedan");
+		}
+		else if (bodyType.equalsIgnoreCase("SUV")) {
+			return("is an SUV");
+		} return null;
+	}
 
 }

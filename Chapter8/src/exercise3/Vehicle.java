@@ -2,11 +2,12 @@ package exercise3;
 
 public class Vehicle {
 
-	private int doorNumber, acceleration;
+	private int doorNumber;
+	private double acceleration;
 	private String manufacturer, transmission, color;
 	private boolean turbo;
 	
-	public Vehicle (int doors, int accel, String manu, String c, String trans, boolean t) {
+	public Vehicle (int doors, double accel, String manu, String c, String trans, boolean t) {
 		
 		doorNumber = doors;
 		acceleration = accel;
@@ -20,7 +21,7 @@ public class Vehicle {
 		return(doorNumber);
 	}
 	
-	public int getAcceleration() {
+	public double getAcceleration() {
 		return(acceleration);
 	}
 	

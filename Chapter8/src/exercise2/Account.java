@@ -66,7 +66,7 @@ public class Account {
 	
 	
 	
-	
+	//used for fees when the account is under the minimum balance 
 	public void fee(double amt) {
 		balance = balance - amt;
 	}

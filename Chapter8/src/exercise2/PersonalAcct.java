@@ -11,6 +11,9 @@ public class PersonalAcct extends Account {
 	}
 	
 
+	/* withdrawing from a personal account will apply the rules for a personal account
+	 * if the balance falls under 100 dollars an addition 2 dollars is charged through the fee method
+	 */
 	public void withdrawal(double amt) {
 
 		super.withdrawal(amt);

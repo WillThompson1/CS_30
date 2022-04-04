@@ -1,6 +1,6 @@
 package exercise3;
 
-public class Vehicle {
+public abstract class Vehicle {
 
 	private int doorNumber;
 	private double acceleration;

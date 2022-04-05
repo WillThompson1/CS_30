@@ -19,7 +19,7 @@ public class myFile {
 			System.out.println("The file does not exist");
 		}
 		
-		
+		input.close();
 		
 		
 	}

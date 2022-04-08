@@ -7,12 +7,12 @@ public class stats2 {
 	
 	public static void main(String[] args) {
 	
-	FileWriter out;
+	
 	BufferedWriter writefile;
 	String Fname; 
 	String Sname;
 	int amt;
-	double grade;
+	int grade;
 	
 	Scanner input = new Scanner(System.in);
 	
@@ -22,7 +22,7 @@ public class stats2 {
 	System.out.println("How many students will be entered?");	
 	amt = input.nextInt();
 	
-	File dataFile = new File("C:\\users\\904342004\\supplies\\" + Fname);
+	File dataFile = new File("C:\\users\\904342004\\supplies\\" + Fname + ".dat");
 	try {
 		dataFile.createNewFile();
 		System.out.println("new file created");
@@ -48,20 +48,33 @@ public class stats2 {
 		System.out.println("Enter " + Sname + "'s grade");	
 		grade = input.nextInt();
 		
+		FileOutputStream out = new FileOutputStream(dataFile);
+		ObjectOutputStream writeDataFile = new ObjectOutputStream(out);
+	
+		writeDataFile.writeObject(Sname + grade);
 		
 		amt = amt - 1;
 		
-		} catch (IOException e) {
+		} catch (FileNotFoundException e) {
+			System.out.println("Encountered a problem finding the file");
+			System.err.println("FileNotFoundException: " + e.getMessage());
 			
+		
+	    } catch (IOException e) {
 			System.out.println("Encountered a problem writing to file");
 			System.err.println("IOException: " + e.getMessage());
-			
-			}
-	
+	    }
 		
 	}
 	
 	 while (amt > 0);
+	
+	
+	
+	
+	
+	
+	
 	} 
 	}
 

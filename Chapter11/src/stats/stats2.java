@@ -22,7 +22,8 @@ public class stats2 {
 	System.out.println("How many students will be entered?");	
 	amt = input.nextInt();
 	
-	File dataFile = new File("C:\\users\\904342004\\supplies\\" + Fname + ".dat");
+  //File dataFile = new File("C:\\users\\904342004\\supplies\\" + Fname + ".dat");
+	File dataFile = new File("C:\\supplies\\" + Fname + ".dat");
 	try {
 		dataFile.createNewFile();
 		System.out.println("new file created");
@@ -56,7 +57,7 @@ public class stats2 {
 		amt = amt - 1;
 		
 		} catch (FileNotFoundException e) {
-			System.out.println("Encountered a problem finding the file");
+			System.out.println("Encountered a problem locating the file");
 			System.err.println("FileNotFoundException: " + e.getMessage());
 			
 		
@@ -69,12 +70,33 @@ public class stats2 {
 	
 	 while (amt > 0);
 	
+	FileReader in;
+	BufferedReader readFile;
 	
+	String line;
+	double avgGrade;
+	double addedGrades = 0;
+	//numScores = amt
 	
+	try {
+		in = new FileReader(dataFile);
+		readFile = new BufferedReader(in);
+		
+		while ((line = readFile.readLine()) !=null);
+		System.out.println(line);
+		addedGrades += Double.parseDouble(line);	
 	
-	
-	
-	
+		avgGrade = addedGrades / amt;
+		System.out.println("Average + " + avgGrade);
+		readFile.close();
+		in.close();
+	} catch (FileNotFoundException e) {
+		System.out.println("Encountered a problem locating the file");
+		System.err.println("FileNotFoundExeption: " + e.getMessage());
+	} catch (IOException f) { 
+		System.out.println("Encountered a problem reading the file");
+		System.err.println("IOExeption:" + f.getMessage());
+	}
 	} 
 	}
 

@@ -1,7 +1,11 @@
 package stats;
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
+import java.util.stream.Stream;
 import java.text.NumberFormat;
 import java.text.ParseException;
 
@@ -14,6 +18,7 @@ public class stats2 {
 	String Fname; 
 	String Sname;
 	int amt;
+	int Counter;
 	int grade;
 	
 	Scanner input = new Scanner(System.in);
@@ -23,6 +28,7 @@ public class stats2 {
 	
 	System.out.println("How many students will be entered?");	
 	amt = input.nextInt();
+	Counter = amt;
 	
 	//File dataFile = new File("C:\\supplies\\" + Fname + ".dat");
 	File dataFile = new File("C:\\users\\904342004\\supplies\\" + Fname + ".dat");
@@ -64,7 +70,7 @@ public class stats2 {
 		
 		
 		
-		amt = amt - 1;
+		Counter = Counter - 1;
 		writefile.close();
 			
 		} catch (FileNotFoundException e) {
@@ -79,31 +85,46 @@ public class stats2 {
 		
 	}
 	
-	 while (amt > 0);
+	 while (Counter > 0);
 	
 	FileReader in;
-	BufferedReader readFile;
 	
-	String line;
+	
+	
 	int avgGrade;
 	int addedGrades = 0;
 	int newGrade = 0;
-	amt = 0;
+	int total = 0;
+	Counter = amt;
 	//numScores = amt
 	
 	try {
 		in = new FileReader(dataFile);
-		readFile = new BufferedReader(in);
 		
-		while ((line = readFile.readLine()) !=null) {
-		System.out.println(line);
-		newGrade = Integer.parseInt(line.replaceAll("[\\D]", ""));
-		addedGrades += newGrade;
-		}
 	
-		avgGrade = addedGrades / amt;
-		System.out.println("Average + " + avgGrade);
-		readFile.close();
+		FileInputStream fstream = new FileInputStream("C:\\users\\904342004\\supplies\\" + Fname + ".dat");
+		BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+		String line;
+		
+		while ((line = br.readLine()) != null)   {
+			  // Print the content on the console
+			  System.out.println (line);
+			}
+	
+			
+
+			System.out.println(line);
+			newGrade = Integer.parseInt(line.replaceAll("[\\D]", ""));
+			total = addedGrades + newGrade;
+			addedGrades = total;
+			System.out.println(line);
+		
+		
+	
+		
+		avgGrade = total / amt;
+		System.out.println("Average = " + avgGrade);
+		
 		in.close();
 	} catch (FileNotFoundException e) {
 		System.out.println("Encountered a problem locating the file");

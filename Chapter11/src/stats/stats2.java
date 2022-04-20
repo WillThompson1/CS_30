@@ -1,13 +1,9 @@
 package stats;
 
 import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.stream.Stream;
-import java.text.NumberFormat;
-import java.text.ParseException;
+
 
 public class stats2 {
 	
@@ -15,12 +11,17 @@ public class stats2 {
 	
 	
 
-	String Fname; 
-	String Sname;
-	int amt;
-	int Counter;
-	int grade;
+	String Fname; //String for the user to enter a file name
+	String Sname; //String for the names of the students 
+	int amt; //amount of students that are going to be entered 
+	int Counter; //amount of lines the file will read and print (same as amount of students)
+	int grade; //integer for the students grade
+	String gradeLine; //string for the line to be converted into a double
 	
+	
+	//creating file 
+	
+	ArrayList<Integer> list = new ArrayList<Integer>();
 	Scanner input = new Scanner(System.in);
 	
 	System.out.println("What would you like to name the new file?");	
@@ -30,49 +31,61 @@ public class stats2 {
 	amt = input.nextInt();
 	Counter = amt;
 	
-	//File dataFile = new File("C:\\supplies\\" + Fname + ".dat");
-	File dataFile = new File("C:\\users\\904342004\\supplies\\" + Fname + ".dat");
-	FileWriter out;
-	BufferedWriter writefile;
 	
+		
+		File dataFile = new File("C:\\users\\904342004\\supplies\\" + Fname + ".dat");
+		FileWriter out;
+		BufferedWriter writefile;
+		PrintWriter pw;
+		
 	try {
+		//writing to file	
+		
 		dataFile.createNewFile();
 		System.out.println("new file created");
 		
-	} catch (IOException e) {
-		System.out.println("error creating file");
-		System.err.println("IOException: " + e.getMessage());
-		}
 	
-	
-	do {
 		
-	
-		try {
-		
-		System.out.println("Enter name of student:");	
-		Sname = input.next();
-		Sname+=input.nextLine();	
-		
-		
-		System.out.println("Enter " + Sname + "'s grade");	
-		grade = input.nextInt();
-		
-		//FileOutputStream out = new FileOutputStream(dataFile);
-		//ObjectOutputStream writeFile = new ObjectOutputStream(out);
-	
 		out = new FileWriter(dataFile);
 		writefile = new BufferedWriter(out);
+		pw = new PrintWriter(writefile);
 		
-		writefile.write(Sname + " " + grade);
+		int[] array = new int[amt];
+		int line = 0;
+		Sname = "";
 		
+		int i = 0; //loop counter 
 		
-		
-		
-		
-		Counter = Counter - 1;
-		writefile.close();
+	
+		while (i < amt*2) { //goes while the counter is less that double the amount of students
+							//double because name and grade must be entered 
 			
+			
+		if (i%2 == 0) {
+			
+			System.out.println("Enter name of student:");	
+			Sname = input.next();
+			Sname+=input.nextLine();	
+			
+			pw.println(Sname); //writes the name to the file
+			pw.flush(); //flushes the input stream 		
+		}
+			
+		if (i%2 != 0) {
+			
+			System.out.println("Enter " + Sname + "'s grade");	
+			gradeLine = input.nextLine();
+			array [line] = (int)Double.parseDouble(gradeLine);
+			
+			pw.println(gradeLine);
+			pw.flush();
+			line = line + 1;
+			
+		}	
+						
+		i = i + 1;	
+					
+	}
 		} catch (FileNotFoundException e) {
 			System.out.println("Encountered a problem locating the file");
 			System.err.println("FileNotFoundException: " + e.getMessage());
@@ -83,17 +96,16 @@ public class stats2 {
 			System.err.println("IOException: " + e.getMessage());
 	    }
 		
-	}
 	
-	 while (Counter > 0);
+	
+	//reading and printing 
 	
 	FileReader in;
 	
 	
 	
-	int avgGrade;
-	int addedGrades = 0;
-	int newGrade = 0;
+	double avgGrade;
+	double addedGrades = 0;
 	int total = 0;
 	Counter = amt;
 	//numScores = amt
@@ -106,21 +118,8 @@ public class stats2 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 		String line;
 		
-		while ((line = br.readLine()) != null)   {
-			  // Print the content on the console
-			  System.out.println (line);
-			}
-	
-			
 
-			System.out.println(line);
-			newGrade = Integer.parseInt(line.replaceAll("[\\D]", ""));
-			total = addedGrades + newGrade;
-			addedGrades = total;
-			System.out.println(line);
 		
-		
-	
 		
 		avgGrade = total / amt;
 		System.out.println("Average = " + avgGrade);

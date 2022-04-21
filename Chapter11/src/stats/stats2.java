@@ -3,6 +3,10 @@ package stats;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
 
 
 public class stats2 {
@@ -33,7 +37,8 @@ public class stats2 {
 	
 	
 		
-		File dataFile = new File("C:\\users\\904342004\\supplies\\" + Fname + ".dat");
+		//File dataFile = new File("C:\\users\\904342004\\supplies\\" + Fname + ".dat");
+		File dataFile = new File("C:\\users\\Will\\supplies\\" + Fname + ".dat");
 		FileWriter out;
 		BufferedWriter writefile;
 		PrintWriter pw;
@@ -57,11 +62,11 @@ public class stats2 {
 		int i = 0; //loop counter 
 		
 	
-		while (i < amt*2) { //goes while the counter is less that double the amount of students
+		while (i < Counter*2) { //goes while the counter is less that double the amount of students
 							//double because name and grade must be entered 
 			
-			
-		if (i%2 == 0) {
+		
+			if (i%2 == 0) {
 			
 			System.out.println("Enter name of student:");	
 			Sname = input.next();
@@ -69,8 +74,9 @@ public class stats2 {
 			
 			pw.println(Sname); //writes the name to the file
 			pw.flush(); //flushes the input stream 		
-		}
+			}
 			
+		
 		if (i%2 != 0) {
 			
 			System.out.println("Enter " + Sname + "'s grade");	
@@ -80,12 +86,10 @@ public class stats2 {
 			pw.println(gradeLine);
 			pw.flush();
 			line = line + 1;
-			
-		}	
-						
+			}					
 		i = i + 1;	
-					
-	}
+		}
+		
 		} catch (FileNotFoundException e) {
 			System.out.println("Encountered a problem locating the file");
 			System.err.println("FileNotFoundException: " + e.getMessage());
@@ -97,10 +101,8 @@ public class stats2 {
 	    }
 		
 	
-	
 	//reading and printing 
 	
-	FileReader in;
 	
 	
 	
@@ -108,34 +110,61 @@ public class stats2 {
 	double addedGrades = 0;
 	int total = 0;
 	Counter = amt;
-	//numScores = amt
+	String userFile;
 	
 	try {
+		
+		FileReader in;
 		in = new FileReader(dataFile);
+		BufferedReader readfile;
+		readfile = new BufferedReader(in);
 		
 	
-		FileInputStream fstream = new FileInputStream("C:\\users\\904342004\\supplies\\" + Fname + ".dat");
-		BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
-		String line;
+		in = new FileReader(dataFile);
 		
-
+		 while ((gradeLine = readfile.readLine()) != null ) { 
+			 
+				
+			 if(Counter % 2 ==0 ) { //if count is even
+			 
+				 addedGrades += Double.parseDouble(gradeLine); //adding to the total score if the line is a score line
+		 
+		 
+		
+		 
+				 System.out.println(gradeLine);
+				// numScore += 1;
+				 
+			 }
+		 
+			 else {
+				System.out.print(gradeLine + " got a: "); 
+			 }
+			// count += 1;
+		 
+		 	}
 		
 		
 		avgGrade = total / amt;
 		System.out.println("Average = " + avgGrade);
 		
-		in.close();
+		readfile.close();
+		
 	} catch (FileNotFoundException e) {
 		System.out.println("Encountered a problem locating the file");
-		System.err.println("FileNotFoundExeption: " + e.getMessage());
-	} catch (IOException f) { 
-		System.out.println("Encountered a problem reading the file");
-		System.err.println("IOExeption:" + f.getMessage());
+		System.err.println("FileNotFoundException: " + e.getMessage());
+		
+		
+	} catch (IOException e) {
+			System.out.println("Encountered a problem writing to file");
+			System.err.println("IOException: " + e.getMessage());	
+	
 	
 	
 	}
 	} 
-	}
+}
+	
 
 	
 	

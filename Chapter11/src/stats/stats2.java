@@ -89,7 +89,7 @@ public class stats2 {
 			}					
 		i = i + 1;	
 		}
-		
+		out.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Encountered a problem locating the file");
 			System.err.println("FileNotFoundException: " + e.getMessage());
@@ -108,9 +108,9 @@ public class stats2 {
 	
 	double avgGrade;
 	double addedGrades = 0;
-	int total = 0;
-	Counter = amt;
+	Counter = 1;
 	String userFile;
+	int ScoresAmt = 0;
 	
 	try {
 		
@@ -118,12 +118,11 @@ public class stats2 {
 		in = new FileReader(dataFile);
 		BufferedReader readfile;
 		readfile = new BufferedReader(in);
-		
 	
 		in = new FileReader(dataFile);
 		
 		 while ((gradeLine = readfile.readLine()) != null ) { 
-			 
+		//while((Double.parseDouble(gradeLine)) != null) {	 
 				
 			 if(Counter % 2 ==0 ) { //if count is even
 			 
@@ -133,23 +132,23 @@ public class stats2 {
 		
 		 
 				 System.out.println(gradeLine);
-				// numScore += 1;
+				 ScoresAmt += 1;
 				 
 			 }
 		 
 			 else {
 				System.out.print(gradeLine + " got a: "); 
 			 }
-			// count += 1;
-		 
+			 Counter += 1;
+				
 		 	}
+			
 		
-		
-		avgGrade = total / amt;
+		avgGrade = addedGrades / amt;
 		System.out.println("Average = " + avgGrade);
 		
 		readfile.close();
-		
+		in.close();
 	} catch (FileNotFoundException e) {
 		System.out.println("Encountered a problem locating the file");
 		System.err.println("FileNotFoundException: " + e.getMessage());

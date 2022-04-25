@@ -21,33 +21,32 @@ public class stats2 {
 		
 		String gradeLine; // string for the line to be converted into a double
 
-		// creating file
-
-		@SuppressWarnings("unused")
-		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		/* Creating the File and adding the names and grades */
+		
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("What would you like to name the new file?");
+		System.out.println("What would you like to name the new file?"); //prompts the user for the file name then assigns it to a variable
 		Fname = input.next();
 
-		System.out.println("How many students will be entered?");
+		System.out.println("How many students will be entered?"); //prompts the user for the number of students they will enter 
+																  //the users input will be used to determine how many sets of questions are asked 
 		amt = input.nextInt();
 		Counter = amt;
 
-		// File dataFile = new File("C:\\users\\904342004\\supplies\\" + Fname +
-		// ".dat");
-		File dataFile = new File("C:\\users\\Will\\supplies\\" + Fname + ".dat");
+		 File dataFile = new File("C:\\users\\904342004\\supplies\\" + Fname + ".dat");		//file location at school 
+		//File dataFile = new File("C:\\users\\Will\\supplies\\" + Fname + ".dat");			//file location at home 
 		FileWriter out;
 		BufferedWriter writefile;
 		PrintWriter pw;
 
-		int[] array = new int[amt];
+		
 
 		try {
 			// writing to file
 
-			dataFile.createNewFile();
-			System.out.println("new file created");
+			dataFile.createNewFile();		//creates a new data file in the location specified previously 
+			System.out.println("new file created");		//tells the user that a new file has been created 
 
 			out = new FileWriter(dataFile);
 			writefile = new BufferedWriter(out);
@@ -75,11 +74,10 @@ public class stats2 {
 
 					System.out.println("Enter " + Sname + "'s grade");
 					gradeLine = input.nextLine();
-					array[line] = (int) Double.parseDouble(gradeLine);
+				
 
 					pw.println(gradeLine);
 					pw.flush();
-					line = line + 1;
 				}
 				i = i + 1;
 			}
@@ -95,9 +93,13 @@ public class stats2 {
 
 		// reading and printing
 
+		int[] array = new int[amt]; //creates an array that will be used to store the grades read from the file
+									//this will let us find the highest and lowest grade inputted by sorting the array
+		
 		double avgGrade;
-		double addedGrades = 0;
+		double addedGrades = 0;		//creates an integer for the total added grades of all the students which will be divided by the number of students to get the average
 		Counter = 1;
+		int line = 0;
 		@SuppressWarnings("unused")
 	
 		String userFile;
@@ -115,19 +117,21 @@ public class stats2 {
 			while ((gradeLine = readfile.readLine()) != null) {
 				// while((Double.parseDouble(gradeLine)) != null) {
 
-				if (Counter % 2 == 0) { // if count is even
+				if (Counter % 2 == 0) { // if count is even 
 
-					addedGrades += Double.parseDouble(gradeLine); // adding to the total score if the line is a score
-																	// line
-
+					addedGrades += Double.parseDouble(gradeLine); // adding to the total score if the line is a score line
+					array[line] = (int) Double.parseDouble(gradeLine);											
+					line = line + 1;
 					System.out.println(gradeLine);
+				
 				}
 
+	
 				else {
 					System.out.print(gradeLine + " got a: ");
+					
 				}
 				Counter += 1;
-
 			}
 
 			avgGrade = addedGrades / amt;

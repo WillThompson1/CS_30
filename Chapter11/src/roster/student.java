@@ -1,12 +1,17 @@
 package roster;
 
-public class student {
+import java.io.Serializable;
 
+public class student implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2959650939919521860L;
 	private String firstName;
 	private String lastName;
 
-	
-	public void Student(String fName, String lName) {
+	public student(String fName, String lName) {
 		firstName = fName;
 		lastName = lName;
 	}

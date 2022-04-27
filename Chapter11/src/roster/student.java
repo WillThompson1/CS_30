@@ -8,8 +8,8 @@ public class student implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 2959650939919521860L;
-	private String firstName;
-	private String lastName;
+	 static String firstName;
+	static String lastName;
 
 	public student(String fName, String lName) {
 		firstName = fName;

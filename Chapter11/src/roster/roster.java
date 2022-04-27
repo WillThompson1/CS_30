@@ -13,14 +13,24 @@ import java.util.Scanner;
 
 public class roster extends student {
 
+	public roster(String fName, String lName) {
+		super(fName, lName);
+		
+		
+	}
+
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7318954331603358997L;
 
 
-	public roster (String fName,String lName) {
-		super (fName, lName);
+
+	
+	public static void writer (String fName,String lName) {
+	
+		
 		
 		FileWriter out;
 		BufferedWriter writer;
@@ -32,16 +42,19 @@ public class roster extends student {
 		
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("What would you like to name the file for the student names?");
+		System.out.println("Which file would you like to write to?");
+		
 		fileName = input.nextLine();
 		
-		File RosterFile = new File("../CS30/Chapter11/src/stats/" + fileName + ".dat");
-		
+		File RosterFile = new File("..\\Chapter11\\src\\roster\\" + fileName + ".dat");	
+			
+	
 	
 	
 		
 	try {
-	  		
+		
+		
 	  	System.out.println("how many students will entered?");
 		amt = input.nextInt();
 		
@@ -91,7 +104,7 @@ public class roster extends student {
 
 	public static void main(String[] args) {
 	
-		roster (String fName,String lName);
+		writer(firstName, lastName);
 		
 	}
 	

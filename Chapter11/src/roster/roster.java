@@ -1,5 +1,6 @@
 package roster;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -47,13 +48,8 @@ public class roster extends student {
 		fileName = input.nextLine();
 		
 		File RosterFile = new File("..\\Chapter11\\src\\roster\\" + fileName + ".dat");	
-			
-	
-	
-	
 		
 	try {
-		
 		
 	  	System.out.println("how many students will entered?");
 		amt = input.nextInt();
@@ -64,9 +60,11 @@ public class roster extends student {
 		
 		counter = 0;
 		
-		while (amt > 0) {
+		while (amt > 0) { //while the amount of student are greater than zero it will prompt with questions, each time it gets a first name and last name
+						  //it subtracts one from the amount, which can be seen as the amount of students left to be entered
 			
-		if (counter / 2 == 0) {
+		if (counter % 2 == 0) { //if the counter is even it will ask for first name,
+								//after printing first name it will add one to the counter making the number odd
 			
 			System.out.println("Enter students first name:");
 			fName = input.next();
@@ -77,7 +75,9 @@ public class roster extends student {
 			counter = counter + 1; 
 		}
 			
-		if (!(counter / 2 == 0)) {
+		if (!(counter % 2 == 0)) { //now the counter is not even and it will ask the last name 
+								   //after printing the last name it will add one to the counter and make the number even again
+								   //this way it alters back and fourth until all the students are entered 
 			
 			System.out.println("Enter students last name:");
 			lName = input.next();
@@ -86,10 +86,11 @@ public class roster extends student {
 			pw.flush(); // flushes the input stream
 			
 			counter = counter + 1; 
-			
-	
-		}		
 		}
+		amt = amt - 1;
+		
+		}
+		input.close();
 		
 		}  catch (FileNotFoundException e) {
 			System.out.println("Encountered a problem locating the file");
@@ -101,6 +102,63 @@ public class roster extends student {
 		}
 	}
 	
+	public static void reader(String fileName) {
+		
+		String firstName = "";
+		String lastName = "";
+		
+		File RosterFile = new File("..\\Chapter11\\src\\roster\\" + fileName + ".dat");	
+		
+		try {
+			
+		FileReader in = new FileReader(RosterFile);
+		in = new FileReader(RosterFile);
+		BufferedReader readfile = new BufferedReader(in);
+
+		String fileLine;
+		int Counter = 1;
+		while ((fileLine = readfile.readLine()) != null) { 
+			if (!(Counter % 2 == 0)) { 
+
+				fileLine = firstName;
+				
+			}
+			
+			if (Counter % 2 == 0) { 
+			
+				fileLine = lastName;
+			
+			}
+			
+			Counter += 1;
+			
+			
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		} catch (FileNotFoundException e) {
+			System.out.println("Encountered a problem locating the file");
+			System.err.println("FileNotFoundException: " + e.getMessage());
+
+		} catch (IOException e) {
+			System.out.println("Encountered a problem writing to file");
+			System.err.println("IOException: " + e.getMessage());
+		}	
+		
+	}
 
 	public static void main(String[] args) {
 	

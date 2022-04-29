@@ -14,6 +14,8 @@ import java.util.Scanner;
 
 public class roster extends student {
 
+	
+
 	public roster(String fName, String lName) {
 		super(fName, lName);
 		
@@ -29,7 +31,7 @@ public class roster extends student {
 
 
 	
-	public static void writer (String fName,String lName) {
+	public static void writer (String fName,String lName, String fileName) {
 	
 		
 		
@@ -37,21 +39,17 @@ public class roster extends student {
 		BufferedWriter writer;
 		PrintWriter pw;
 		
+		
 		int amt;
-		String fileName;
 		int counter;
 		
 		Scanner input = new Scanner(System.in);
-		
-		System.out.println("Which file would you like to write to?");
-		
-		fileName = input.nextLine();
 		
 		File RosterFile = new File("..\\Chapter11\\src\\roster\\" + fileName + ".dat");	
 		
 	try {
 		
-	  	System.out.println("how many students will entered?");
+	  	System.out.println("how many students will be entered?");
 		amt = input.nextInt();
 		
 		out = new FileWriter(RosterFile);
@@ -102,7 +100,14 @@ public class roster extends student {
 		}
 	}
 	
+	
+	
+	
+	
+	
+	
 	public static void reader(String fileName) {
+		
 		
 		String firstName = "";
 		String lastName = "";
@@ -120,32 +125,31 @@ public class roster extends student {
 		while ((fileLine = readfile.readLine()) != null) { 
 			if (!(Counter % 2 == 0)) { 
 
-				fileLine = firstName;
+				firstName = fileLine;
+				
+			} 
+			
+			if (Counter % 2 == 0) { 
+			
+				lastName = fileLine;
 				
 			}
 			
 			if (Counter % 2 == 0) { 
-			
-				fileLine = lastName;
-			
+				
+				student names = new student(firstName, lastName);
+				System.out.println(names);
+				
 			}
+			
+		
 			
 			Counter += 1;
 			
 			
 		
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 		
 		
@@ -161,8 +165,18 @@ public class roster extends student {
 	}
 
 	public static void main(String[] args) {
-	
-		writer(firstName, lastName);
+		String fileName;
+		Scanner input = new Scanner(System.in);
+		System.out.println("Which file would you like to write to?");
+		fileName = input.nextLine();
+		
+		writer(firstName, lastName, fileName);
+		
+		System.out.println("\n");
+		System.out.println("\bnames of students");
+		System.out.println("\n");
+		
+		reader(fileName);
 		
 	}
 	

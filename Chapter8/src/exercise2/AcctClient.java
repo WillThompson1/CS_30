@@ -171,7 +171,7 @@ public class AcctClient {
 					if (action.equalsIgnoreCase("Withdraw")) {
 						
 						/* The user enters how much they would like to withdraw
-						 * The double entered is used for the withdraw methof in the account class
+						 * The double entered is used for the withdraw method in the account class
 						 */		
 						System.out.println("How much would you like to withdraw?");
 						double amt = input.nextDouble();

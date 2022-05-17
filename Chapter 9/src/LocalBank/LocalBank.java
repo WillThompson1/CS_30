@@ -25,7 +25,7 @@ package LocalBank;
 		/* display menu of choices */
 		do {
 			System.out.println("\nDeposit\\Withdrawal\\Check balance");
-			System.out.println("Add an account\\Remove an account");
+			System.out.println("Add an account\\Remove an account\\Modify an account");
 			System.out.println("Quit\n");
 			System.out.print("Enter choice: ");
 			action = input.next();
@@ -33,7 +33,11 @@ package LocalBank;
 			if (action.equalsIgnoreCase("A")) 
 			{
 				easySave.addAccount();
-			} 
+			}
+			if (action.equalsIgnoreCase("M")) 
+			{
+			Account.changeAddress();
+			}
 			else if (!action.equalsIgnoreCase("Q")) 
 			{
 				System.out.print("Enter account ID: ");

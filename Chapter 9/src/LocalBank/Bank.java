@@ -31,7 +31,7 @@ public class Bank
 	{
 		Account newAcct;
 		double bal;
-		String fName, lName;
+		String fName, lName, street, city, prov, postal;
 
 	//add your string variables for street, city, province, postal code
 
@@ -42,8 +42,28 @@ public class Bank
 
 		System.out.print("Last name: ");
 		lName = input.nextLine();
-
-
+		
+		
+		System.out.print("Street name: ");
+		street = input.nextLine();
+		
+		
+		System.out.print("City: ");
+		city = input.nextLine();
+		
+		
+		System.out.print("Province: ");
+		prov = input.nextLine();
+		
+		
+		System.out.print("Postal Code: ");
+		postal = input.nextLine();
+		
+		
+		
+		
+		
+		
 	//get customer street and record street
 
 	//get city 
@@ -62,7 +82,7 @@ public class Bank
 		System.out.print("Beginning balance: ");
 		bal = input.nextDouble();
 		
-		newAcct = new Account(bal, fName, lName); //update this constructor to include street, city, province, postal code	
+		newAcct = new Account(bal, fName, lName, street, city, prov, postal); //update this constructor to include street, city, province, postal code	
 										//create acct object
 		accounts.add(newAcct);						//add account to bank accounts
 		

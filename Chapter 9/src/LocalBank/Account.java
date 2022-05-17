@@ -3,6 +3,7 @@ package LocalBank;
 
  
 import java.text.NumberFormat;
+import java.util.Scanner;
 
 public class Account {
 	private double balance;
@@ -86,7 +87,30 @@ public class Account {
 	//Street, city, province, postalCode
 
 
-
+	public static void changeAddress() {
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("What information would you like to change?");
+		System.out.println("street\\city\\province\\postal code");
+	
+		String action;
+		action = input.next();
+		if (action.equalsIgnoreCase("street")) {
+			Customer.changeStreet();
+		} if (action.equalsIgnoreCase("city")) {
+			Customer.changeCity();
+		} if (action.equalsIgnoreCase("province")) {				
+			Customer.changeProvince();
+		} if (action.equalsIgnoreCase("postal")) {				
+			Customer.changePostalCode();
+		}
+		
+		
+		
+		
+		
+	}
 
 	
 	
@@ -121,4 +145,7 @@ public class Account {
 		accountString += "Current balance is " + money.format(balance);
 	 	return(accountString);
 	}
+
+
+
 }

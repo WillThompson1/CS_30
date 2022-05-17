@@ -11,7 +11,7 @@ public class Customer {
 	private static String streetName;
 	private static String cityName;
 	private static String province;
-	private static String postalCode;
+	public static String postalCode;
 	//create String variables street, city, province, postal code	
 
 	
@@ -40,7 +40,7 @@ public class Customer {
 		Scanner input = new Scanner(System.in);
 		System.out.println("What would you like to change the city to?");
 		cityName = input.next();
-		input.close();
+	
 	}
 	
 	
@@ -49,7 +49,7 @@ public class Customer {
 		Scanner input = new Scanner(System.in);
 		System.out.println("What would you like to change the street to?");
 		streetName = input.next();
-		input.close();
+		
 	}
 	
 	
@@ -58,16 +58,16 @@ public class Customer {
 		Scanner input = new Scanner(System.in);
 		System.out.println("What would you like to change the province to?");
 		province = input.next();
-		input.close();
+	
 	}
 	
 	
 	//create changePostalCode method that asks the user their postal code and records postal code in a variable above
 	public static void changePostalCode() {
-		Scanner input = new Scanner(System.in);
+		Scanner change = new Scanner(System.in);
 		System.out.println("What would you like to change the postal code to?");
-		postalCode = input.next();
-		input.close();
+		postalCode = change.next();
+		
 	}
 	
 	
@@ -81,10 +81,13 @@ public class Customer {
 	 */
 	public String toString() {
 		String custString;
-
+		String addyString;
+		
 		//update this string so that it contains the street, city, province, and postal code
-		custString = firstName + " " + lastName + "\n" + streetName + " street" + "\n" + cityName + " " + province + " " + postalCode + "\n";
-	 	return(custString);
+		custString = firstName + " " + lastName;
+		addyString = streetName + " " + cityName + " " +  province + " " +  postalCode;
+		custString += addyString;
+	 	return(custString);	 
 	}
 
 }

@@ -87,7 +87,7 @@ public class Account {
 	//Street, city, province, postalCode
 
 
-	public static void changeAddress() {
+	public void changeAddress(String newStreet, String newCity, String newProvince, String newPostal, String newCountry) {
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -97,13 +97,13 @@ public class Account {
 		String action;
 		action = input.next();
 		if (action.equalsIgnoreCase("street")) {
-			Customer.changeStreet();
+			cust.changeStreet(newStreet);
 		} if (action.equalsIgnoreCase("city")) {
-			Customer.changeCity();
+			cust.changeCity(newCity);
 		} if (action.equalsIgnoreCase("province")) {				
-			Customer.changeProvince();
+			cust.changeProvince(newProvince);
 		} if (action.equalsIgnoreCase("postal")) {				
-			Customer.changePostalCode();
+			cust.changePostalCode(newPostal);
 		}
 		
 		

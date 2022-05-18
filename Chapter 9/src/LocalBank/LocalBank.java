@@ -19,7 +19,8 @@ package LocalBank;
 	public static void main(String[] args) {
 		Bank easySave = new Bank();
 		Scanner input = new Scanner(System.in);
-		String action, acctID;
+		String action;
+		String acctID= "";
 		Double amt;
 
 		/* display menu of choices */
@@ -36,7 +37,7 @@ package LocalBank;
 			}
 			if (action.equalsIgnoreCase("M")) 
 			{
-			Account.changeAddress();
+			easySave.modifyAccount(acctID);
 			}
 			else if (!action.equalsIgnoreCase("Q")) 
 			{

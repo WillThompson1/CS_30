@@ -8,10 +8,10 @@ import java.util.Scanner;
 
 public class Customer {
 	private String firstName, lastName;
-	private static String streetName;
-	private static String cityName;
-	private static String province;
-	public static String postalCode;
+	private String streetName;
+	private String cityName;
+	private String province;
+	public String postalCode;
 	//create String variables street, city, province, postal code	
 
 	
@@ -36,38 +36,38 @@ public class Customer {
 	
 
 	//create changeCity method that asks the user their city and records city in a variable above
-	public static void changeCity() {
-		Scanner input = new Scanner(System.in);
+	public void changeCity(String newCity) {
+		Scanner change = new Scanner(System.in);
 		System.out.println("What would you like to change the city to?");
-		cityName = input.next();
-	
+		newCity = change.next();
+		cityName = newCity;
 	}
 	
 	
 	//create changeStreet method that asks the user their street and records street in a variable above
-	public static void changeStreet() {
-		Scanner input = new Scanner(System.in);
+	public void changeStreet(String newStreet) {
+		Scanner change = new Scanner(System.in);
 		System.out.println("What would you like to change the street to?");
-		streetName = input.next();
-		
+		newStreet = change.next();
+		streetName = newStreet;
 	}
 	
 	
 	//create changeProvince method that asks the user their province and records province in a variable above
-	public static void changeProvince() {
-		Scanner input = new Scanner(System.in);
+	public void changeProvince(String newProvince) {
+		Scanner change = new Scanner(System.in);
 		System.out.println("What would you like to change the province to?");
-		province = input.next();
-	
+		newProvince = change.next();
+		province = newProvince;
 	}
 	
 	
 	//create changePostalCode method that asks the user their postal code and records postal code in a variable above
-	public static void changePostalCode() {
+	public void changePostalCode(String newPostal) {
 		Scanner change = new Scanner(System.in);
 		System.out.println("What would you like to change the postal code to?");
-		postalCode = change.next();
-		
+		newPostal = change.next();
+		postalCode = newPostal;
 	}
 	
 	
@@ -81,12 +81,12 @@ public class Customer {
 	 */
 	public String toString() {
 		String custString;
-		String addyString;
+		
 		
 		//update this string so that it contains the street, city, province, and postal code
-		custString = firstName + " " + lastName;
-		addyString = streetName + " " + cityName + " " +  province + " " +  postalCode;
-		custString += addyString;
+		custString = firstName + " " + lastName + "\n"
+					+ streetName + " " + cityName + " " +  province + " " +  postalCode + "\n";
+	
 	 	return(custString);	 
 	}
 

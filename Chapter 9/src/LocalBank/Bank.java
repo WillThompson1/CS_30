@@ -59,11 +59,7 @@ public class Bank
 		System.out.print("Postal Code: ");
 		postal = input.nextLine();
 		
-		
-		
-		
-		
-		
+	
 	//get customer street and record street
 
 	//get city 
@@ -71,10 +67,6 @@ public class Bank
 	//get province
 
 	//get postal code
-
-
-
-
 
 
 
@@ -146,10 +138,13 @@ public class Bank
 	 * post: Account information, including balance, has been displayed.
 	 */
 	public void checkBalance(String acctID) {
-		int acctIndex;
-		Account acctToMatch, acct;
 		
-	 	acctToMatch = new Account(acctID);
+		Account acctToMatch, acct;
+		int acctIndex;
+		acctToMatch = new Account(acctID);
+		acctIndex = accounts.indexOf(acctToMatch);
+		
+	
 	 	acctIndex = accounts.indexOf(acctToMatch);		//retrieve location of account
 	 	if (acctIndex > -1) {
 	 		acct = accounts.get(acctIndex);	//retrieve object to display
@@ -157,7 +152,7 @@ public class Bank
 	 	} else {
 	 		System.out.println("Account does not exist.");
 	 	}
-
+	}
 
 
 
@@ -172,7 +167,41 @@ public class Bank
 //	{
 ///	  print Account does not exits
 //	}	
+	
+	
+	
 
+	public void modifyAccount(String acctID) {
+	
+	Account acctToMatch, acct;	
+	int acctIndex;
+	
+	acctToMatch = new Account(acctID);
+ 	acctIndex = accounts.indexOf(acctToMatch);
+	
+	if(acctIndex > 1) {
+	acct = accounts.get(acctIndex);	 
+		
+	String newCity, newStreet, newProvince, newCountry, newPostal;
+	
+	newCity = "";
+	newStreet = "";
+	newProvince = "";
+	newCountry = "";
+	newPostal = "";
+	
+	
+	
+	 acct.changeAddress(newStreet, newCity, newProvince, newPostal, newCountry);	
+	 	
+	}
+	 		
+	 		
+	 		
+	 		
+	 		
+	 		
+	 	
 
 	}
 }

@@ -69,7 +69,7 @@ public class Customer {
 		newPostal = change.next();
 		postalCode = newPostal;
 	}
-	
+
 	
 
 

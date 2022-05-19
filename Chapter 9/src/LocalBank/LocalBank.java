@@ -21,6 +21,7 @@ package LocalBank;
 		Scanner input = new Scanner(System.in);
 		String action;
 		String acctID= "";
+		
 		Double amt;
 
 		/* display menu of choices */
@@ -35,10 +36,6 @@ package LocalBank;
 			{
 				easySave.addAccount();
 			}
-			if (action.equalsIgnoreCase("M")) 
-			{
-			easySave.modifyAccount(acctID);
-			}
 			else if (!action.equalsIgnoreCase("Q")) 
 			{
 				System.out.print("Enter account ID: ");
@@ -47,6 +44,10 @@ package LocalBank;
 					System.out.print("Enter deposit amount: ");
 					amt = input.nextDouble();
 					easySave.transaction(1, acctID, amt);
+					
+				} else if (action.equalsIgnoreCase("M")) {
+					easySave.modifyAccount(acctID);
+					
 				} else if (action.equalsIgnoreCase("W")) {
 					System.out.print("Enter withdrawal amount: ");
 					amt = input.nextDouble();
@@ -57,7 +58,9 @@ package LocalBank;
 					easySave.deleteAccount(acctID);
 				}
 				//write code to modify information if action equals "M"
+				
 			}
 		} while (!action.equalsIgnoreCase("Q"));
+		
 	}
 }

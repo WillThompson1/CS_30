@@ -79,6 +79,8 @@ public class Bank
 		accounts.add(newAcct);						//add account to bank accounts
 		
 		System.out.println("Account created. Account ID is: " + newAcct.getID());
+		
+		
 	}
 
 	
@@ -179,7 +181,7 @@ public class Bank
 	acctToMatch = new Account(acctID);
  	acctIndex = accounts.indexOf(acctToMatch);
 	
-	if(acctIndex > 1) {
+	if(acctIndex > -1) {
 	acct = accounts.get(acctIndex);	 
 		
 	String newCity, newStreet, newProvince, newCountry, newPostal;
@@ -194,6 +196,8 @@ public class Bank
 	
 	 acct.changeAddress(newStreet, newCity, newProvince, newPostal, newCountry);	
 	 	
+	} else {
+		System.out.println("Could not find an account matching the account ID");
 	}
 	 		
 	 		

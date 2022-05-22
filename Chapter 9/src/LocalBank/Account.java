@@ -87,7 +87,7 @@ public class Account {
 	//Street, city, province, postalCode
 
 
-	public void changeAddress(String newStreet, String newCity, String newProvince, String newPostal, String newCountry) {
+	public void changeAddress(String newStreet, String newCity, String newProvince, String newPostal, String newCountry) {	//changeAddress method uses the new information strings
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -95,7 +95,8 @@ public class Account {
 		System.out.println("street\\city\\province\\postal code");
 	
 		String action;
-		action = input.next();
+		action = input.next();	//allows the user to type which part of the address they would like to change
+								//will then run the appropriate method to change it
 		if (action.equalsIgnoreCase("street")) {
 			cust.changeStreet(newStreet);
 		} if (action.equalsIgnoreCase("city")) {
@@ -106,10 +107,7 @@ public class Account {
 			cust.changePostalCode(newPostal);
 		}
 		
-		
-		
-		
-	
+
 	}
 
 	

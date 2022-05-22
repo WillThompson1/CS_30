@@ -21,7 +21,7 @@ public class Customer {
 	 * post: A Customer object has been created. 
 	 * Customer data has been initialized with parameters.
 	 */
-	public Customer(String fName, String lName, String street, String city, String prov, String postal) //modify constructor to include street, city, province, postal code
+	public Customer(String fName, String lName, String street, String city, String prov, String postal) 
 	{
 		firstName = fName;
 		lastName = lName;
@@ -29,45 +29,43 @@ public class Customer {
 		cityName = city;
 	    province = prov;
 	    postalCode = postal;
-
-		//reflect the changes in the parameter
-	    
+  
 	}
 	
 
-	//create changeCity method that asks the user their city and records city in a variable above
+	//changeCity method that asks the user their city and records city in a variable above
 	public void changeCity(String newCity) {
 		Scanner change = new Scanner(System.in);
 		System.out.println("What would you like to change the city to?");
-		newCity = change.next();
-		cityName = newCity;
+		newCity = change.next(); //stores the users input as the new city
+		cityName = newCity;  //sets the current city equal to the new one, completing the change
 	}
 	
 	
-	//create changeStreet method that asks the user their street and records street in a variable above
+	//changeStreet method that asks the user their street and records street in a variable above
 	public void changeStreet(String newStreet) {
 		Scanner change = new Scanner(System.in);
 		System.out.println("What would you like to change the street to?");
-		newStreet = change.next();
-		streetName = newStreet;
+		newStreet = change.next(); //stores the users input as the new street 
+		streetName = newStreet;  //sets the street code equal to the new one, completing the change
 	}
 	
 	
-	//create changeProvince method that asks the user their province and records province in a variable above
+	//changeProvince method that asks the user their province and records province in a variable above
 	public void changeProvince(String newProvince) {
 		Scanner change = new Scanner(System.in);
 		System.out.println("What would you like to change the province to?");
-		newProvince = change.next();
-		province = newProvince;
+		newProvince = change.next(); //stores the users input as the new province 
+		province = newProvince;  //sets the current province equal to the new one, completing the change
 	}
 	
 	
-	//create changePostalCode method that asks the user their postal code and records postal code in a variable above
+	//changePostalCode method that asks the user their postal code and records postal code in a variable above
 	public void changePostalCode(String newPostal) {
 		Scanner change = new Scanner(System.in);
 		System.out.println("What would you like to change the postal code to?");
-		newPostal = change.next();
-		postalCode = newPostal;
+		newPostal = change.next();	//stores the users input as the new postal code 
+		postalCode = newPostal;  //sets the current postal code equal to the new one, completing the change
 	}
 
 	
@@ -83,7 +81,7 @@ public class Customer {
 		String custString;
 		
 		
-		//update this string so that it contains the street, city, province, and postal code
+		//prints all of the information when the customer string is called 
 		custString = firstName + " " + lastName + "\n"
 					+ streetName + " " + cityName + " " +  province + " " +  postalCode + "\n";
 	

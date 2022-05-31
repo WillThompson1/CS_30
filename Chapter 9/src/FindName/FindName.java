@@ -16,6 +16,7 @@ public class FindName {
 	Scanner input = new Scanner(System.in);
 	
 	
+	
 	System.out.print("How many students would you like to enter: ");		//prompts the user for the amount of student they would like to store in the array
 	amt = input.nextInt();		//stores the users input as the amt variable 
 	input.nextLine();
@@ -61,6 +62,27 @@ public class FindName {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
 	
 	
 	

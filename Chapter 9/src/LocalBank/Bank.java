@@ -37,6 +37,8 @@ public class Bank
 
 		Scanner input = new Scanner(System.in);
 		
+		/* Asks for all the information required including the street city province and postal code and assigns them to string variables  */
+		
 		System.out.print("First name: ");
 		fName = input.nextLine();
 
@@ -59,15 +61,6 @@ public class Bank
 		System.out.print("Postal Code: ");
 		postal = input.nextLine();
 		
-	
-	//get customer street and record street
-
-	//get city 
-
-	//get province
-
-	//get postal code
-
 
 
 
@@ -156,37 +149,27 @@ public class Bank
 	 	}
 	}
 
-
-
-	//Create a modifyAccount(String AcctID) method 
-	//if(acctIndex > 1) 
-//	{
-	//	acct = accounts.get..
-	//	acct.changeAddress()
-		//print acct to the screen
-//	}
-//	else
-//	{
-///	  print Account does not exits
-//	}	
 	
 	
+	/** 
+	 * Allows the user to modify information in a previously created account
+	 * pre: none
+	 * post: Account information is modified
+	 */
+	public void modifyAccount(String acctID) { 
 	
-
-	public void modifyAccount(String acctID) {
+	Account acctToMatch, acct;	//creates objects of the account class
+	int acctIndex; //creates an integer to store the index of the account
 	
-	Account acctToMatch, acct;	
-	int acctIndex;
+	acctToMatch = new Account(acctID);	//creates a new account 'accToMatch' under the account id entered
+ 	acctIndex = accounts.indexOf(acctToMatch);  //The account index is equal to that of the account id entered 
 	
-	acctToMatch = new Account(acctID);
- 	acctIndex = accounts.indexOf(acctToMatch);
-	
-	if(acctIndex > -1) {
+	if(acctIndex > -1) {	//if the account index is equal to -1 it will continue 
 	acct = accounts.get(acctIndex);	 
 		
-	String newCity, newStreet, newProvince, newCountry, newPostal;
+	String newCity, newStreet, newProvince, newCountry, newPostal;	//creates strings for the new address information
 	
-	newCity = "";
+	newCity = "";		//initializes the strings 
 	newStreet = "";
 	newProvince = "";
 	newCountry = "";
@@ -194,9 +177,9 @@ public class Bank
 	
 	
 	
-	 acct.changeAddress(newStreet, newCity, newProvince, newPostal, newCountry);	
+	 acct.changeAddress(newStreet, newCity, newProvince, newPostal, newCountry); //runs the changeAddress method with the new information strings
 	 	
-	} else {
+	} else {		//if the account index is less than or equal to -1 it will return account not found
 		System.out.println("Could not find an account matching the account ID");
 	}
 	 		

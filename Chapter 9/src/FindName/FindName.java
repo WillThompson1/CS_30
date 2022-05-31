@@ -2,10 +2,11 @@ package FindName;
 
 import java.util.Scanner;
 
+
 public class FindName {
 
 	public static void main(String[] args) {
-	
+	 
 	int y;	
 		
 	String SName;	//string to store the Students names that are being entered

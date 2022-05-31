@@ -8,7 +8,7 @@ public class HighestGrade {
 	public static void main(String[] args) {
 	
 		Scanner input = new Scanner(System.in);	
-	ArrayList<Integer> numbers = new ArrayList<Integer>();	
+	ArrayList<Integer> numbers = new ArrayList<Integer>();	//creates an ArrayList
 	int i;
 	
 	for(i=0; i<5; i++) { 
@@ -34,7 +34,7 @@ public class HighestGrade {
 	
 	
 	int highest = numbers.get(4);	
-	System.out.println("Highest grade is " + highest);	
+	System.out.println("Highest grade is " + highest);	//displays the highest grade to the user
 		
 		
 		

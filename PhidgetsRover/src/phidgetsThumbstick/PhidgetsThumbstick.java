@@ -12,17 +12,17 @@ public class PhidgetsThumbstick {
 	//create
 	DCMotor leftMotors = new DCMotor();
 	DCMotor rightMotors = new DCMotor();
-	VoltageRatioInput vAxis = new VoltageRatioInput();
+	VoltageRatioInput hAxis = new VoltageRatioInput();
 	
 	//address
 	leftMotors.setChannel(0);
 	rightMotors.setChannel(1);
-	vAxis.setChannel(0);
+	hAxis.setChannel(1);
 	
 	//open
 	leftMotors.open(5000);
 	rightMotors.open(5000);
-	vAxis.open(5000);
+	hAxis.open(5000);
 	
 	//increasing the acceleration 
 	leftMotors.setAcceleration(leftMotors.getMaxAcceleration());
@@ -32,11 +32,13 @@ public class PhidgetsThumbstick {
 	while(true) {
 		
 	//get the data from vertical axis (from -1 to 1)
-	double verticalAxis = vAxis.getVoltageRatio();
+	double horizontalAxis = hAxis.getVoltageRatio();
+	System.out.println(horizontalAxis);
+	
 		
 	//using the thumbstick positions, set motor controller target velocity
-	leftMotors.setTargetVelocity(verticalAxis);
-	rightMotors.setTargetVelocity(verticalAxis);
+	leftMotors.setTargetVelocity(horizontalAxis);
+	rightMotors.setTargetVelocity(horizontalAxis);
 		
 	//pause .1 seconds
 	Thread.sleep(100);

@@ -16,10 +16,10 @@ public class PhidgetsTurn {
         VoltageRatioInput hAxis = new VoltageRatioInput(); 
 
         //Address
-        leftMotors.setChannel(0);
-        rightMotors.setChannel(1);
-        vAxis.setChannel(0);
-        hAxis.setChannel(1);
+        leftMotors.setChannel(1);
+        rightMotors.setChannel(0);
+        vAxis.setChannel(1);
+        hAxis.setChannel(0);
 
         //Open
         leftMotors.open(5000);

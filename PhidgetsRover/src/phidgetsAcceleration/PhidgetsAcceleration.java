@@ -28,15 +28,15 @@ public class PhidgetsAcceleration {
 	        rightMotors.setAcceleration(rightMotors.getMaxAcceleration());
 
 	        //Move forward at full speed
-	        leftMotors.setTargetVelocity(1);
-	        rightMotors.setTargetVelocity(-1);
+	        leftMotors.setTargetVelocity(-1);
+	        rightMotors.setTargetVelocity(1);
 
 	        //Wait for 1 second
 	        Thread.sleep(1000);
 
 	        //reverse at full speed
-	        leftMotors.setTargetVelocity(-1);
-	        rightMotors.setTargetVelocity(1);
+	        leftMotors.setTargetVelocity(1);
+	        rightMotors.setTargetVelocity(-1);
 	        
 	        //one second pause
 	        Thread.sleep(1000);

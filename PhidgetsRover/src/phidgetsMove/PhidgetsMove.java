@@ -1,8 +1,8 @@
-package phidgetsThumbstick;
+package phidgetsMove;
 
 import com.phidget22.*;
 
-public class PhidgetsThumbstick {
+public class PhidgetsMove {
 
 	public static void main(String[] args) throws Exception {
 
@@ -40,6 +40,8 @@ public class PhidgetsThumbstick {
 	leftMotors.setTargetVelocity(horizontalAxis);
 	rightMotors.setTargetVelocity(horizontalAxis);
 		
+	System.out.println(horizontalAxis);
+	
 	//pause .1 seconds
 	Thread.sleep(100);
 	

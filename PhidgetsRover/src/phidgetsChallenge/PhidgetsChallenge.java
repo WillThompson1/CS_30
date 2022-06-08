@@ -12,21 +12,39 @@ public class PhidgetsChallenge {
 	        //Create
 	        DCMotor leftMotors = new DCMotor();
 	        DCMotor rightMotors = new DCMotor();
+	        DistanceSensor sonar = new DistanceSensor();
 
 	        //Address
 	        leftMotors.setHubPort(5);
 	        leftMotors.setChannel(0);
 	        rightMotors.setHubPort(5);
 	        rightMotors.setChannel(1);
+	        sonar.setHubPort(3);
+	        
+	        
 
 	        //Open
 	        leftMotors.open(5000);
 	        rightMotors.open(5000);
+	        sonar.open(5000);
 	        
-	        //Increasing acceleration 
+	        while (true) {
+	        
+	        if (sonar.getDistance() < 400) {
+	        		 
+	        	leftMotors.setTargetVelocity(-1);
+		        rightMotors.setTargetVelocity(-1);
+	        	Thread.sleep(400);
+	        	
+	        	leftMotors.setTargetVelocity(0);
+		        rightMotors.setTargetVelocity(0);
+	        		 
+	         } else {
+	        	
+	        //increasing acceleration  	 
 	        leftMotors.setAcceleration(leftMotors.getMaxAcceleration());
-	        rightMotors.setAcceleration(rightMotors.getMaxAcceleration());
-
+	 	    rightMotors.setAcceleration(rightMotors.getMaxAcceleration());
+	 	      	 
 	        //Move forward at full speed
 	        leftMotors.setTargetVelocity(-1);
 	        rightMotors.setTargetVelocity(1);
@@ -44,7 +62,7 @@ public class PhidgetsChallenge {
 	        rightMotors.setTargetVelocity(1);
 	        
 	        //0.59 second pause
-	        Thread.sleep(210);
+	        Thread.sleep(220);
 	        
 	        //Move forward at full speed
 	        leftMotors.setTargetVelocity(-1);
@@ -63,7 +81,7 @@ public class PhidgetsChallenge {
 	        rightMotors.setTargetVelocity(1);
 	        
 	        //0.59 second pause
-	        Thread.sleep(210);
+	        Thread.sleep(215);
 	        
 	        //Move forward at full speed
 	        leftMotors.setTargetVelocity(-1);
@@ -96,6 +114,8 @@ public class PhidgetsChallenge {
 	        //stopping both motors
 	        leftMotors.setTargetVelocity(0);
 	        rightMotors.setTargetVelocity(0);
+	         }
+}
 }
 }
 	  

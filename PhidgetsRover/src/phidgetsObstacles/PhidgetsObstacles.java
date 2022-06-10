@@ -31,18 +31,27 @@ public class PhidgetsObstacles {
 	            
 	            
 	            //modified so the fidget moves forwards faster but also stops sooner 
-	            if (sonar.getDistance() < 400) {
-	                //Object detected! Stop motors
-	                leftMotors.setTargetVelocity(-0.40);
-	                rightMotors.setTargetVelocity(0);
-	                Thread.sleep(100);
-	                leftMotors.setTargetVelocity(0);
-	                rightMotors.setTargetVelocity(0);
+	            if (sonar.getDistance() < 750) {
+	                
+	            	
+	            	//Object detected! Stop motors
+	            	
+	            	leftMotors.setTargetVelocity(0);
+			        rightMotors.setTargetVelocity(0); 
+			        Thread.sleep(1000);
+			        		    
+			        leftMotors.setTargetVelocity(-1);
+			        rightMotors.setTargetVelocity(-1);
+			        Thread.sleep(900);
+			            
+			        leftMotors.setTargetVelocity(1);
+			        rightMotors.setTargetVelocity(-1);
+			        Thread.sleep(1000);
 	                
 	            } else {
 	                //Move forward slowly (40% max speed)
-	                leftMotors.setTargetVelocity(0.40);
-	                rightMotors.setTargetVelocity(-0.40);
+	                leftMotors.setTargetVelocity(1);
+	                rightMotors.setTargetVelocity(-1);
 	            }
 
 	            //Wait for 250milliseconds

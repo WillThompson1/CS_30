@@ -1,8 +1,11 @@
-package phidgetsChallenge;
+package PhidgetsChallenge;
 
 import com.phidget22.*;
 
-public class PhidgetsChallenge {
+//Phidgets Challenge application navigates around the tape square without sonar 
+
+
+public class phidgetsChallenge {
 
 	 public static void main(String[] args) throws Exception {
 
@@ -12,7 +15,7 @@ public class PhidgetsChallenge {
 	        //Create
 	        DCMotor leftMotors = new DCMotor();
 	        DCMotor rightMotors = new DCMotor();
-	        DistanceSensor sonar = new DistanceSensor();
+	    
 
 	        //Address
 	        leftMotors.setHubPort(5);
@@ -24,14 +27,7 @@ public class PhidgetsChallenge {
 	        //Open
 	        leftMotors.open(5000);
 	        rightMotors.open(5000);
-	        sonar.open(5000);
-	        sonar.setDataInterval(100);
-	        
-	        while (true) {
-	        
-	        System.out.println("Distance:" + sonar.getDistance() + " mm");
-	        
-	        while (sonar.getDistance() > 550) {
+    
 	        	 
 	        	 //increasing acceleration  	 
 		        leftMotors.setAcceleration(leftMotors.getMaxAcceleration());
@@ -106,31 +102,11 @@ public class PhidgetsChallenge {
 		        rightMotors.setTargetVelocity(0);
 		       
 		        Thread.sleep(1000);
-	      
-	        
-	        } while (sonar.getDistance() < 550) {
-		       	 
-		            leftMotors.setTargetVelocity(0);
-		        	rightMotors.setTargetVelocity(0); 
-		        	Thread.sleep(1000);
-		        		    
-		            leftMotors.setTargetVelocity(-1);
-		        	rightMotors.setTargetVelocity(-1);
-		            Thread.sleep(900);
-		                	
-		            leftMotors.setTargetVelocity(0);
-		        	rightMotors.setTargetVelocity(0);
-		          
-	        
-	        }
-	          
-	        
-	        Thread.sleep(100);
-	        
+    
 	       }
 	 }
 
-}
+
 	
 
 

@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Will/Downloads/Phidget22Java/phidget22.jar"/>
+	<classpathentry kind="lib" path="C:/Users/904342004/Desktop/Phidget22Java/phidget22.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

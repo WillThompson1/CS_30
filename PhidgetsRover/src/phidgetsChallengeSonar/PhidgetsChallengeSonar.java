@@ -32,18 +32,23 @@ public class PhidgetsChallengeSonar {
 	        y++;
 	        System.out.println("Distance:" + sonar.getDistance());
 	        
-	        if (sonar.getDistance() < 550) {
+	        if (sonar.getDistance() < 1200) {
 		       	 
+	        	leftMotors.setTargetVelocity(-1);
+	        	rightMotors.setTargetVelocity(1); 
+	        	Thread.sleep(850);
+	        	
 	            leftMotors.setTargetVelocity(0);
 	        	rightMotors.setTargetVelocity(0); 
 	        	Thread.sleep(1000);
 	        		    
 	            leftMotors.setTargetVelocity(-1);
 	        	rightMotors.setTargetVelocity(-1);
-	            Thread.sleep(900);
+	            Thread.sleep(500);
 	                	
 	            leftMotors.setTargetVelocity(0);
 	        	rightMotors.setTargetVelocity(0); 
+	        	Thread.sleep(1000);
 	        }
 	        	 
 	        	 //increasing acceleration  	 
@@ -69,6 +74,25 @@ public class PhidgetsChallengeSonar {
 		        //0.220 second pause
 		        Thread.sleep(220);
 		        
+		        if (sonar.getDistance() < 1200) {
+			       	 
+		        	leftMotors.setTargetVelocity(-1);
+		        	rightMotors.setTargetVelocity(1); 
+		        	Thread.sleep(850);
+		        	
+		            leftMotors.setTargetVelocity(0);
+		        	rightMotors.setTargetVelocity(0); 
+		        	Thread.sleep(1000);
+		        		    
+		            leftMotors.setTargetVelocity(-1);
+		        	rightMotors.setTargetVelocity(-1);
+		            Thread.sleep(500);
+		                	
+		            leftMotors.setTargetVelocity(0);
+		        	rightMotors.setTargetVelocity(0); 
+		        	Thread.sleep(1000);
+		        }
+		        
 		        //Move forward at full speed
 		        leftMotors.setTargetVelocity(-1);
 		        rightMotors.setTargetVelocity(1);
@@ -88,6 +112,25 @@ public class PhidgetsChallengeSonar {
 		        //0.215 second pause
 		        Thread.sleep(215);
 		        
+		        if (sonar.getDistance() < 1200) {
+			       	 
+		        	leftMotors.setTargetVelocity(-1);
+		        	rightMotors.setTargetVelocity(1); 
+		        	Thread.sleep(850);
+		        	
+		            leftMotors.setTargetVelocity(0);
+		        	rightMotors.setTargetVelocity(0); 
+		        	Thread.sleep(1000);
+		        		    
+		            leftMotors.setTargetVelocity(-1);
+		        	rightMotors.setTargetVelocity(-1);
+		            Thread.sleep(1000);
+		                	
+		            leftMotors.setTargetVelocity(0);
+		        	rightMotors.setTargetVelocity(0); 
+		        	Thread.sleep(1000);
+		        }
+		        
 		        //Move forward at full speed
 		        leftMotors.setTargetVelocity(-1);
 		        rightMotors.setTargetVelocity(1);
@@ -106,6 +149,25 @@ public class PhidgetsChallengeSonar {
 		        
 		        //0.59 second pause
 		        Thread.sleep(210);
+		        
+		        if (sonar.getDistance() < 1200) {
+			       	 
+		        	leftMotors.setTargetVelocity(-1);
+		        	rightMotors.setTargetVelocity(1); 
+		        	Thread.sleep(850);
+		        	
+		            leftMotors.setTargetVelocity(0);
+		        	rightMotors.setTargetVelocity(0); 
+		        	Thread.sleep(1000);
+		        		    
+		            leftMotors.setTargetVelocity(-1);
+		        	rightMotors.setTargetVelocity(-1);
+		            Thread.sleep(1000);
+		                	
+		            leftMotors.setTargetVelocity(0);
+		        	rightMotors.setTargetVelocity(0); 
+		        	Thread.sleep(1000);
+		        }
 		        
 		        //Move forward at full speed
 		        leftMotors.setTargetVelocity(-1);

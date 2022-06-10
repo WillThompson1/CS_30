@@ -88,7 +88,7 @@ public class phidgetsChallenge {
 		        rightMotors.setTargetVelocity(1);
 		        
 		        //0.59 second pause
-		        Thread.sleep(210);
+		        Thread.sleep(200);
 		        
 		        //Move forward at full speed
 		        leftMotors.setTargetVelocity(-1);

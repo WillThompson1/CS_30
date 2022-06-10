@@ -31,7 +31,7 @@ public class PhidgetsObstacles {
 	            
 	            
 	            //modified so the fidget moves forwards faster but also stops sooner 
-	            if (sonar.getDistance() < 750) {
+	            if (sonar.getDistance() < 550) {
 	                
 	            	
 	            	//Object detected! Stop motors
@@ -49,6 +49,7 @@ public class PhidgetsObstacles {
 			        Thread.sleep(1000);
 	                
 	            } else {
+	            	 
 	                //Move forward slowly (40% max speed)
 	                leftMotors.setTargetVelocity(1);
 	                rightMotors.setTargetVelocity(-1);
